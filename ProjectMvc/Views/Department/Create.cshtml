@@ -1,0 +1,56 @@
+﻿@model CreatedDepartmentDto
+
+@{
+    ViewData["Title"] = "Create Department";
+}
+
+
+}
+
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4 text-primary">Create New Department</h2>
+
+    <form asp-action="Create" method="post">
+        
+
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Code" class="form-label"></label>
+            <input asp-for="Code" class="form-control" />
+            <span asp-validation-for="Code" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Discription" class="form-label"></label>
+            <textarea asp-for="Discription" class="form-control"></textarea>
+            <span asp-validation-for="Discription" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="DateOfCreation" class="form-label"></label>
+            <input asp-for="DateOfCreation" class="form-control" type="date" />
+            <span asp-validation-for="DateOfCreation" class="text-danger"></span>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-success">
+                <i class="fas fa-plus-circle"></i> Create
+            </button>
+            <a asp-action="Index" class="btn btn-secondary ms-2">
+                <i class="fas fa-arrow-left"></i> Back to List
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}
+
+
